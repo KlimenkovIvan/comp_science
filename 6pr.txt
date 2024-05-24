@@ -1,0 +1,10 @@
+#практическая работа №6
+
+print("Введите числа в формате a, b, c, ..., n:")
+c = list(map(float, input().split(", ")))
+S = 0
+for i in range(len(c)):
+    if abs(c[i]) < 1 and (i + 1)  % 2 != 0:
+        S += c[i]
+print(c)
+print(S)

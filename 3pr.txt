@@ -1,0 +1,23 @@
+#практическая работа №3
+
+x = int(input())
+y = int(input())
+z = int(input())
+
+a = x*y + z
+b = x + 2*y*z
+
+if x < y + z:
+  a /= x
+else:
+  a /= (y + z)
+
+if x + y < z:
+  b /= (x + y)
+else:
+  b /= z
+
+if a > b:
+  print(a)
+else:
+  print(b)
