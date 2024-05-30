@@ -1,0 +1,30 @@
+#практическая работа №10
+
+import numpy as np
+
+N = 3
+A = [[36, -30, 24],[-30, 84, -30],[24, -30, 36]]
+
+print('Исходный массив A')
+print(A)
+print('Исходный массив A')
+
+for i in range (0,N):
+    for j in range (0,N):
+        print('%f'%A[i][j], end=' ')
+    print('')
+
+L, X = np.linalg.eig(A)
+
+print('собственные значения A')
+print(L)
+print('собственные векторы A')
+
+for i in range (0,N):
+    for j in range (0,N):
+        print('%f'%X[i][j], end=' ')
+    print('')
+
+
+
+

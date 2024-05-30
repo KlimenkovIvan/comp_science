@@ -1,0 +1,26 @@
+#практическая работа №8 часть 2
+import numpy as np
+#значения
+S = 12
+G = 6
+K = 80301
+#матрица коэффициентов
+A = np.array([[1, 5, 1],[4, -1, 1],[S, G, 2*(S+G+K)]])
+#вектор правой части
+B = np.array([S-G+K+10, S-G+4*K-2, 2*((S-G)*(S+G+K)+G)+K*S])
+#решение системы уравнений
+X = np.linalg.solve(A, B) # np.linalg.solve для решения систем линейных уравнений
+#обратная матрица и определитель
+inverseA = np.linalg.inv(A)
+determinantA = np.linalg.det(A)
+print("Решение системы уравнений:")
+print("x1 =", X[0])
+print("x2 =", X[1])
+print("x3 =", X[2])
+print("\nОбратная матрица:")
+print(inverseA)
+print("\nОпределитель матрицы:")
+print(determinantA)
+
+
+
