@@ -1,0 +1,43 @@
+#дзшка вариант 12
+
+def read_matrix(matr.txt):
+  
+   with open("matr.txt", 'r') as file:
+    rows = file.readlines()
+  matrix = [[int(num) for num in row.split()] for row in rows]
+  return matrix
+
+def find_max_in_row(row):
+  
+  max_element = row[0]
+  for element in row:
+    if element > max_element:
+      max_element = element
+  return max_element
+
+def sum_negative_in_column(matrix, column_index):
+  
+  column = [row[column_index] for row in matrix]
+  sum_negative = 0
+  for element in column:
+    if element < 0:
+      sum_negative += element
+  return sum_negative
+
+#считываем матрицу из файла
+matrix = read_matrix("matr.txt")
+
+#вводим k
+k = int(input("Введите номер строки (k): "))
+
+#максимальный элемент в k-ой строке
+max_element = find_max_in_row(matrix[k - 1])
+print(f"Максимальный элемент в {k}-ой строке: {max_element}")
+
+#индекс столбца с максимальным элементом
+column_index = matrix[k - 1].index(max_element)
+
+#считаем сумму отрицательных элементов в столбце
+sum_negative = sum_negative_in_column(matrix, column_index)
+print(f"Сумма отрицательных элементов в столбце: {sum_negative}")
+ 
